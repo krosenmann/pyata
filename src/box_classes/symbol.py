@@ -7,7 +7,7 @@
 ##########################################################
 ##########################################################
 
-from box    import *
+from .box    import *
 from socket import *
 
 
@@ -78,4 +78,4 @@ class Symbol (Box):
     @staticmethod
     def debug():
         o = Symbol(10, 10, 0)
-        print o.set("mesa")
+        print(o.set("mesa"))

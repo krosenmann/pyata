@@ -8,7 +8,7 @@
 ##########################################################
 ##########################################################
 
-from box    import *
+from .box    import *
 from socket import *
 from time import *
 
@@ -108,6 +108,6 @@ class Number (Box):
     @staticmethod
     def debug():
         o = Number(10, 10, 0)
-        print o.set(20)
-        print o.increment()
-        print o.decrement()    
+        print(o.set(20))
+        print(o.increment())
+        print(o.decrement())    

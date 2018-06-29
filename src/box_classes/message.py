@@ -9,7 +9,7 @@
 ##########################################################
 
 
-from box import *
+from .box import *
 
 #number class itself
 class Message (Box):
@@ -55,4 +55,4 @@ class Message (Box):
     @staticmethod
     def debug():
         box = Message(20, 20, "alo!", 0)
-        print box.edit("ola")
+        print(box.edit("ola"))

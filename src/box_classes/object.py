@@ -8,7 +8,7 @@
 ##########################################################
 ##########################################################
 
-from box import *
+from .box import *
 
 
 
@@ -49,6 +49,6 @@ class Object (Box):
     @staticmethod
     def debug():
         o = Object(10, 10, 0, "dac~")
-        print o.edit("osc~")
-        print o.edit("")
+        print(o.edit("osc~"))
+        print(o.edit(""))
     

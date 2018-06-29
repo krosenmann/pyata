@@ -74,7 +74,7 @@ class Box:
             return True
                 
         else:
-            print False
+            print(False)
         
 
     #method that sets the canvas
@@ -144,8 +144,8 @@ class Box:
     #gets the number of inlets of the object
     def verify_inlets (self):
         #import dinamico pra evitar problema de referencia ciclica
-        from connection import Connection, connect
-        from object import Object
+        from .connection import Connection, connect
+        from .object import Object
         
         #building an inlet test
         inlet = Object(self.x, self.y-30, "inlet")
@@ -167,8 +167,8 @@ class Box:
     #gets the number of outlets of the object
     def verify_outlets (self):
         #import dinamico pra evitar problema de referencia ciclica
-        from connection import Connection, connect
-        from object import Object
+        from .connection import Connection, connect
+        from .object import Object
         
         #building an outlet test
         outlet = Object(self.x, self.y-30, "outlet")
@@ -192,11 +192,11 @@ class Box:
     @staticmethod
     def debug():
         box = Box(20, 20, 0)
-        print box.move(10, 10)
-        print box.select()
-        print box.unselect()
-        print box.shift_select()
-        print box.shift_unselect()
+        print(box.move(10, 10))
+        print(box.select())
+        print(box.unselect())
+        print(box.shift_select())
+        print(box.shift_unselect())
     
 
 

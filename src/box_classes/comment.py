@@ -9,7 +9,7 @@
 ##########################################################
 
 
-from box import *
+from .box import *
 
 #number class itself
 class Comment (Box):
@@ -45,4 +45,4 @@ class Comment (Box):
     @staticmethod
     def debug():
         box = Comment(20, 20, "alo!", 0)
-        print box.edit("ola")
+        print(box.edit("ola"))

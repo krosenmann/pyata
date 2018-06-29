@@ -92,7 +92,7 @@ class Communication():
         
     #connecting to pd
     def init_pd(self): 
-        print "initializing server.pd..."
+        print("initializing server.pd...")
         self.thread.start()
         sleep(5)
         
@@ -102,10 +102,10 @@ class Communication():
             self.rcv_socket.listen(1) 
             self.rcv, addr = self.rcv_socket.accept()
             self.init_pyata()
-            print "connecting with pd"
+            print("connecting with pd")
             return True
-        except error, err: 
-            print "Error connecting to %s:%d: %s" % (self.host, self.snd_port, err) 
+        except error as err: 
+            print("Error connecting to %s:%d: %s" % (self.host, self.snd_port, err)) 
             return False
     
     #init some socket variables
@@ -121,8 +121,8 @@ class Communication():
         try:
             self.snd_socket.send(commands)
             return True
-        except error, err: 
-            print "Error sending message %s : %s" % (message, err) 
+        except error as err: 
+            print("Error sending message %s : %s" % (message, err)) 
             return False
 
 
@@ -135,10 +135,10 @@ class Communication():
             self.snd_socket.close() 
             self.rcv_socket.close()
             self.file.close()
-            print "closing connection with pd" 
+            print("closing connection with pd") 
             return True
-        except error, err: 
-            print "Error sending message %s : %s" % (message, err) 
+        except error as err: 
+            print("Error sending message %s : %s" % (message, err)) 
             return False   
 
     
