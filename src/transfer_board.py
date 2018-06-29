@@ -10,41 +10,41 @@
 ##########################################################
 
 
-from basic_classes.box import *
+from basic_classes.box import memory_box
 import copy
+
 
 class TransferBoard():
     def __init__(self):
         self.memory = []
-    
-    #copy method
+
+    # copy method
     def copy(self):
         del self.memory[:]
         for b in memory_box:
             if b.selected:
                 self.memory.append(copy.deepcopy(b))
-            
-    #paste method
+
+    # paste method
     def paste(self, x, y):
-       for b in self.memory:
-           b.x+=x
-           b.y+=y           
-           b.create()
-        
-    #cut method
+        for b in self.memory:
+            b.x += x
+            b.y += y
+            b.create()
+
+    # cut method
     def cut(self):
         self.copy()
         for b in memory_box:
             if b.selected:
                 b.delete()
-        
-    #duplicate method
+
+    # duplicate method
     def duplicate(self, x, y):
         self.copy()
         self.paste(x, y)
-        
-    #select all method
+
+    # select all method
     def selectall(self):
         for b in memory_box:
             b.shift_select()
-    

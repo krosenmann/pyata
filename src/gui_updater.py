@@ -9,31 +9,32 @@
 ##########################################################
 ##########################################################
 
-from threading  import *
-from basic_classes.box import *
+from threading import Thread
+from basic_classes.box import memory_box
+
 
 class GuiUpdater(Thread):
-    #class variable that indicates if the thread should end
+    # class variable that indicates if the thread should end
     finish = False
-    
-    #constructor  
+
+    # constructor
     def __init__(self, rcv):
         Thread.__init__(self)
         self.rcv = rcv
-        
-    #run method
+
+    # run method
     def run(self):
         while not(GuiUpdater.finish):
             temp = self.rcv.recv(1024)
             commands = temp.split(";")
-            
+
             for c in commands:
                 i = c.rfind(" ")
-                #print c
-                #verifica se a string nao veio quebrada
+                # print c
+                # verifica se a string nao veio quebrada
                 result = c.split(" ")
-                if len(result) > 1:                
+                if len(result) > 1:
                     value = c[0:i]
-                    id= int(c[i:len(c)])
-                    box=memory_box[id-1] #get the box
-                    box.value=value #updates its value   
+                    id = int(c[i:len(c)])
+                    box = memory_box[id-1]  # get the box
+                    box.value = value  # updates its value
